@@ -2,7 +2,7 @@ version: '3.6'
 
 
 services:
-  medidor_enerbit:
+  medidor-crud:
     build: .
     restart: always
     ports:
@@ -13,9 +13,9 @@ services:
       - "redis"
     volumes:
       - "./wait-for-it.sh:/wait-for-it.sh:ro"
-    command: ["./wait-for-it.sh", "db:5432", "--", "./medidor-enerbit"]
+    command: ["./wait-for-it.sh", "db:5432", "--", "./medidor-crud"]
     environment: # Example ENV configuration
-      APP_NAME: "medidor-enerbit"
+      APP_NAME: "medidor-crud"
       GIN_MODE: "release"
       GIN_HTTPS: "false"
       GIN_ADDR: "0.0.0.0"
@@ -28,6 +28,8 @@ services:
       POSTGRES_PORT: "5432"
       POSTGRES_SSL: "disable"
       POSTGRES_TIMEZONE: "Asia/Kolkata"
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379"
     links:
       - redis
   db:

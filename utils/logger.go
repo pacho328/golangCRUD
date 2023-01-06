@@ -31,7 +31,7 @@ func init() {
 		log.Logger = log.With().Str("host", host).Logger()
 	}
 
-	log.Logger = log.With().Str("service", "medidor_enerbit").Logger()
+	log.Logger = log.With().Str("service", "medidor-crud").Logger()
 
 	log.Logger = log.With().Caller().Logger()
 }

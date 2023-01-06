@@ -1,9 +1,11 @@
 package routers
 
 import (
-	controllers "medidor_enerbit/controllers"
+	controllers "medidor-crud/controllers"
 
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func SetupRouters(app *gin.Engine) {
@@ -15,5 +17,5 @@ func SetupRouters(app *gin.Engine) {
 		v1.PATCH("/medidor", controllers.UpdateMedidor)
 		v1.DELETE("/medidor/:id", controllers.DeleteMedidor)
 	}
-
+	app.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 }

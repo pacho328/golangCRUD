@@ -8,9 +8,10 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 
+	models "medidor-crud/models"
+
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
-	models "medidor_enerbit/models"
 )
 
 var user string

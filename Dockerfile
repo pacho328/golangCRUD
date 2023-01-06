@@ -1,6 +1,6 @@
 FROM golang:latest
 
-ENV APP_NAME medidor-enerbit
+ENV APP_NAME medidor-crud
 
 COPY . /go/src/${APP_NAME}
 WORKDIR /go/src/${APP_NAME}

@@ -1,12 +1,13 @@
 package app
 
 import (
+	grpcs "medidor-crud/gRPC"
+	middlewares "medidor-crud/middlewares"
+	routers "medidor-crud/routers"
+	"medidor-crud/utils"
+
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
-	grpcs "medidor_enerbit/gRPC"
-	middlewares "medidor_enerbit/middlewares"
-	routers "medidor_enerbit/routers"
-	"medidor_enerbit/utils"
 )
 
 // Function to setup the app object
